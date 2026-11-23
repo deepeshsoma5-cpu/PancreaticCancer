@@ -1,0 +1,42 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+tcga patients: 145  gse71729 patients: 123  shared genes: 12754 
+pooled patients: 268  events: 170  candidate genes: 2000 
+
+===== TRAIN ON ONE COHORT, TEST ON THE OTHER =====
+train tcga     -> test moffitt  | c-index 0.514 | genes 6
+train moffitt  -> test tcga     | c-index 0.529 | genes 6
+Warning messages:
+1: Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+2: Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+done with repeat 1 of 10 
+done with repeat 2 of 10 
+done with repeat 3 of 10 
+done with repeat 4 of 10 
+done with repeat 5 of 10 
+done with repeat 6 of 10 
+done with repeat 7 of 10 
+done with repeat 8 of 10 
+done with repeat 9 of 10 
+done with repeat 10 of 10 
+There were 50 or more warnings (use warnings() to see the first 50)
+
+===== POOLED CV (c-index inside each cohort) =====
+tcga     mean 0.606 | sd 0.073
+moffitt  mean 0.576 | sd 0.093
+median genes per signature: 6 
+Warning message:
+Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+
+===== LOCKED POOLED SIGNATURE =====
+     gene         coef
+     EPS8  0.085454822
+    FYCO1 -0.052014804
+ KIAA0513 -0.020911432
+  PHACTR2 -0.015312811
+    TMOD3  0.012198880
+      LYZ -0.009767777
+
+genes shared with the old tcga-only signature:  
+apparent tcga     c-index 0.711 | log-rank p 8.6e-05
+apparent moffitt  c-index 0.651 | log-rank p 0.00012

@@ -1,0 +1,23 @@
+genes in common: 19749 
+
+best match correlation for each gse71729 sample:
+   0%   10%   25%   50%   75%   90%  100% 
+0.161 0.204 0.218 0.235 0.253 0.266 0.339 
+samples with a match >= 0.8 : 0 
+samples with a match >= 0.9 : 0 
+samples with a match >= 0.95 : 0 
+
+top 10 pairs (do the survival times and status match?):
+    moffitt     match     r t_mo s_mo t_st s_st
+ GSM1844146 GSM536907 0.339    6    1    6    1
+ GSM1844232 GSM536479 0.331    1    0    1    0
+ GSM1844219 GSM536466 0.301   13    1   13    1
+ GSM1844203 GSM536946 0.294    8    0    8    0
+ GSM1844137 GSM536896 0.289   30    0   30    0
+ GSM1844147 GSM536908 0.282   10    1   10    1
+ GSM1844151 GSM536917 0.278   19    0   19    0
+ GSM1844164 GSM536929 0.276    7    1    7    1
+ GSM1844160 GSM536925 0.275   59    0   59    0
+ GSM1844159 GSM536924 0.270   10    1   10    1
+
+dropping 0 gse71729 samples from training
