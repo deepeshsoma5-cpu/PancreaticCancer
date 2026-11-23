@@ -1,0 +1,25 @@
+
+===== most picked genes and how expressed they are =====
+     gene times_picked mean_logcpm expr_percentile
+  SLC19A3           76        2.94              28
+      LTK           53        1.47              16
+     GHRL           51        0.64              10
+  CNTNAP2           42        1.27              14
+     RGS7           38       -0.68               3
+     LY6D           30        1.64              17
+     ASB2           19        1.37              15
+      CFP           19       -1.41               0
+     DSG3           19        2.26              22
+     EREG           15        2.29              22
+   ATP1A2           14        1.01              12
+   ZNF488           14        1.39              15
+     IL10           13       -1.10               1
+ C16orf74           12        0.95              12
+   CLEC4F           12       -0.96               2
+
+median expression percentile of these genes: 14 
+
+patients with stage and age: 121 
+
+===== clinical baseline (stage + age) =====
+mean c-index 0.514 | sd 0.083
