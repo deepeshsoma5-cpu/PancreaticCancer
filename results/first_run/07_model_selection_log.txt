@@ -1,0 +1,33 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+
+ randomForestSRC 3.10.0 
+ 
+ Type rfsrc.news() to see new features, changes, and bug fixes. 
+ 
+
+patients: 145  genes: 2000 
+done with repeat 1 of 10 
+done with repeat 2 of 10 
+done with repeat 3 of 10 
+done with repeat 4 of 10 
+done with repeat 5 of 10 
+done with repeat 6 of 10 
+done with repeat 7 of 10 
+done with repeat 8 of 10 
+done with repeat 9 of 10 
+done with repeat 10 of 10 
+There were 50 or more warnings (use warnings() to see the first 50)
+
+===== CROSS-VALIDATED C-INDEX (TCGA only) =====
+Cox-LASSO              mean 0.537 | sd 0.072 | median genes 6
+RandomSurvivalForest   mean 0.558 | sd 0.068 | median genes 10
+
+mean difference (lasso - forest): -0.021 | lasso won 17 of 50 folds
+
+most often selected genes:
+
+ SLC19A3      LTK     GHRL  CNTNAP2     RGS7     LY6D     ASB2      CFP 
+      76       53       51       42       38       30       19       19 
+    DSG3     EREG   ATP1A2   ZNF488     IL10 C16orf74   CLEC4F 
+      19       15       14       14       13       12       12 

@@ -15,7 +15,9 @@ ex <- readRDS("data/gse62452_tumors.rds")
 shared <- intersect(rownames(tc$logcpm), rownames(ex$expr))
 
 # keep the 2000 most variable genes, this doesnt use survival so nothing leaks
-m <- apply(tc$logcpm[shared, ], 1, mad)
+avg <- rowMeans(tc$logcpm[shared, ])
+well <- shared[avg > median(avg)]
+m <- apply(tc$logcpm[well, ], 1, mad)
 top <- names(sort(m, decreasing = TRUE))[1:nvar]
 
 # scale each gene inside its own dataset
