@@ -27,7 +27,20 @@ Setting options('GEOquery.inmemory.gpl'=FALSE)
 Using locally cached version of GPL20769 found here:
 data//GPL20769.soft.gz 
 platform: GPL20769 
-Error in symbol_col(fd) : 
-  no symbol column, columns are: ID, ORF, GENE_NAME
-Calls: to_genes ... is.factor -> [[ -> [[.data.frame -> <Anonymous> -> symbol_col
-Execution halted
+using annotation column: GENE_NAME | examples: alpha-1-B glycoprotein, APOBEC1 complementation factor, ataxin 2-binding protein 1, AIG2-like domain 1, alpha-2-macroglobulin, alpha-2-macroglobulin-like 1 
+
+===== GSE71729 (primary tumors with survival) =====
+patients: 123  events: 83  censored: 40 
+median time, events: 13 | censored: 18 
+genes: 19704  shared with tcga: 23 
+WARNING: very few shared genes, the gene names probably didnt map right
+Using locally cached version of GPL4133 found here:
+data//GPL4133.soft.gz 
+
+platform: GPL4133 
+using annotation column: GENE_SYMBOL | examples: APOBEC3B, ATP11B, LOC100132006, DNAJA1, EHMT2, RPL23 
+
+===== GSE21501 (tumors with survival) =====
+patients: 102  events: 66  censored: 36 
+median time, events: 13 | censored: 20 
+genes: 19749  shared with tcga: 12754 

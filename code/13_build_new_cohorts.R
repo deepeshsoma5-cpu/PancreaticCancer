@@ -20,15 +20,21 @@ get_geo <- function(id) {
   stop("could not get ", id, " after 5 tries")
 }
 
+# try the column names in order, symbol before name
 symbol_col <- function(fd) {
-  hit <- grep("^gene_?symbol$|^symbol$|gene symbol", colnames(fd), ignore.case = TRUE, value = TRUE)
-  if (!length(hit)) stop("no symbol column, columns are: ", paste(colnames(fd), collapse = ", "))
-  hit[1]
+  pats <- c("^gene_?symbol$", "^symbol$", "gene symbol", "^gene_?name$")
+  for (p in pats) {
+    hit <- grep(p, colnames(fd), ignore.case = TRUE, value = TRUE)
+    if (length(hit)) return(hit[1])
+  }
+  stop("no symbol column, columns are: ", paste(colnames(fd), collapse = ", "))
 }
 
 # probes -> genes, keeping the most variable probe for each symbol
 to_genes <- function(ex, fd) {
-  sym <- trimws(sub(" /// .*", "", as.character(fd[[symbol_col(fd)]])))
+  col <- symbol_col(fd)
+  sym <- trimws(sub(" /// .*", "", as.character(fd[[col]])))
+  cat("using annotation column:", col, "| examples:", paste(head(sym[sym != ""], 6), collapse = ", "), "\n")
   ok <- !is.na(sym) & sym != "" & sym != "---" & sym != "NA"
   ex <- ex[ok, , drop = FALSE]
   sym <- sym[ok]
@@ -46,11 +52,13 @@ to_genes <- function(ex, fd) {
 tc <- readRDS("data/tcga_paad_pdac.rds")
 
 summarize <- function(name, ex, clin) {
+  shared <- length(intersect(rownames(ex), rownames(tc$logcpm)))
   cat("\n=====", name, "=====\n")
   cat("patients:", nrow(clin), " events:", sum(clin$status == 1), " censored:", sum(clin$status == 0), "\n")
   cat("median time, events:", round(median(clin$time_months[clin$status == 1]), 1),
       "| censored:", round(median(clin$time_months[clin$status == 0]), 1), "\n")
-  cat("genes:", nrow(ex), " shared with tcga:", length(intersect(rownames(ex), rownames(tc$logcpm))), "\n")
+  cat("genes:", nrow(ex), " shared with tcga:", shared, "\n")
+  if (shared < 5000) cat("WARNING: very few shared genes, the gene names probably didnt map right\n")
 }
 
 # ---- gse71729 ----
