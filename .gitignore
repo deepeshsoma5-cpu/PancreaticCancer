@@ -9,3 +9,4 @@ data/
 results/*.rds
 *.rds
 .venv/
+install5.log
