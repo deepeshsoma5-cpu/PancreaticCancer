@@ -1,0 +1,10 @@
+install.log
+install2.log
+install3.log
+install4.log
+install4.log
+install4.log
+GDCdata/
+data/
+results/*.rds
+*.rds
