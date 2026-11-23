@@ -1,0 +1,49 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+external patients: 65  events: 49 
+
+===== EXTERNAL VALIDATION (GSE62452), LOCKED SIGNATURE =====
+c-index 0.592 | 95% bootstrap ci 0.506 to 0.678 | shuffle test p = 0.0264
+
+log-rank p (median split): 0.00154 
+hazard ratio high vs low (95% ci): 2.73 1.43 5.2 
+Ignoring unknown labels:
+• colour : "Strata"
+null device 
+          1 
+log-rank p using tcga median cutoff: 0.000775  (high-risk n = 33 )
+
+time dependent auc at 12, 24, 36 months:
+ t=12  t=24  t=36 
+0.587 0.813 0.807 
+Registered S3 method overwritten by 'riskRegression':
+  method        from 
+  nobs.multinom broom
+
+integrated brier score up to 36 months (lower is better):
+
+Integrated Brier score (crps):
+
+          IBS[0;time=36)
+Reference          0.197
+signature          0.185
+
+===== MULTIVARIATE COX (external, n = 64 ) =====
+          exp(coef) lower .95 upper .95     p
+risk_z        1.380     1.054     1.806 0.019
+stage_num     1.038     0.674     1.597 0.866
+
+proportional hazards check:
+          chisq df     p
+risk_z     3.12  1 0.077
+stage_num  2.07  1 0.150
+GLOBAL     4.55  2 0.103
+
+===== SENSITIVITY: signature size =====
+genes 8 | c-index 0.592 | log-rank p 0.002
+genes 8 | c-index 0.592 | log-rank p 0.002
+genes 9 | c-index 0.597 | log-rank p 0.002
+Warning messages:
+1: Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+2: Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+3: Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
