@@ -1,0 +1,67 @@
+
+genes tested in both: 13974 
+spearman correlation of t stats between cohorts: 0.768 
+genes de in tcga (fdr < 0.05): 5925 
+of those, same direction and p < 0.05 in external: 3041 
+Downloading gene sets (first use only, may take a few minutes)...
+Warning message:
+In file.rename(tmp_path, zip_path) :
+  cannot rename file '/tmp/RtmpqGLMnM/file77633ed8384c.zip' to '/home/codespace/.cache/R/msigdbr/msigdb.2026.1.zip', reason 'Invalid cross-device link'
+
+===== HALLMARK PATHWAYS (Up = higher in high risk) =====
+                       set NGenes Direction_tcga PValue_tcga FDR_tcga
+               E2F_TARGETS    199             Up     1.5e-24  7.7e-23
+            G2M_CHECKPOINT    195             Up     4.9e-23  1.2e-21
+            MYC_TARGETS_V1    199             Up     9.5e-16  1.6e-14
+          MTORC1_SIGNALING    198             Up     1.2e-11  1.5e-10
+           MITOTIC_SPINDLE    195             Up     5.3e-09  5.3e-08
+                GLYCOLYSIS    188             Up     2.2e-08  1.9e-07
+         PROTEIN_SECRETION     94             Up     2.9e-06  2.1e-05
+            MYC_TARGETS_V2     56             Up     5.5e-06  3.4e-05
+ UNFOLDED_PROTEIN_RESPONSE    112             Up     2.4e-05  1.3e-04
+       ALLOGRAFT_REJECTION    186           Down     4.9e-05  2.4e-04
+       PANCREAS_BETA_CELLS     36           Down     4.2e-04  1.9e-03
+        TGF_BETA_SIGNALING     53             Up     8.0e-04  3.3e-03
+                DNA_REPAIR    148             Up     1.4e-03  5.3e-03
+                   HYPOXIA    189             Up     3.4e-03  1.2e-02
+                MYOGENESIS    169           Down     1.1e-02  3.5e-02
+         ANDROGEN_RESPONSE     98             Up     1.8e-02  5.6e-02
+ INTERFERON_ALPHA_RESPONSE     97             Up     3.0e-02  8.9e-02
+         KRAS_SIGNALING_DN    135           Down     3.9e-02  1.1e-01
+   PI3K_AKT_MTOR_SIGNALING     99             Up     4.1e-02  1.1e-01
+    ESTROGEN_RESPONSE_LATE    191             Up     5.9e-02  1.4e-01
+ OXIDATIVE_PHOSPHORYLATION    197             Up     5.7e-02  1.4e-01
+   IL6_JAK_STAT3_SIGNALING     81           Down     6.4e-02  1.5e-01
+     INFLAMMATORY_RESPONSE    188           Down     8.8e-02  1.9e-01
+   CHOLESTEROL_HOMEOSTASIS     72             Up     9.9e-02  2.0e-01
+   ESTROGEN_RESPONSE_EARLY    195             Up     1.0e-01  2.0e-01
+ Direction_ext PValue_ext FDR_ext replicated
+            Up    3.8e-24 1.9e-22       TRUE
+            Up    1.4e-23 3.4e-22       TRUE
+            Up    5.2e-21 8.7e-20       TRUE
+            Up    2.0e-14 2.0e-13       TRUE
+            Up    2.2e-12 1.8e-11       TRUE
+            Up    3.5e-09 2.5e-08       TRUE
+            Up    3.2e-08 1.8e-07       TRUE
+            Up    1.5e-05 6.9e-05       TRUE
+            Up    1.5e-03 5.7e-03       TRUE
+          Down    9.1e-01 9.3e-01      FALSE
+          Down    2.4e-03 7.9e-03       TRUE
+            Up    2.1e-03 7.4e-03       TRUE
+            Up    7.6e-06 3.8e-05       TRUE
+            Up    3.8e-03 1.1e-02       TRUE
+          Down    5.1e-03 1.3e-02       TRUE
+            Up    3.6e-03 1.1e-02      FALSE
+            Up    2.0e-14 2.0e-13      FALSE
+          Down    2.0e-02 3.9e-02      FALSE
+            Up    6.3e-03 1.5e-02      FALSE
+            Up    5.3e-02 9.8e-02      FALSE
+            Up    3.9e-04 1.6e-03      FALSE
+            Up    7.7e-01 9.0e-01      FALSE
+            Up    4.5e-01 6.3e-01      FALSE
+            Up    1.4e-02 3.0e-02      FALSE
+            Up    1.0e-01 1.8e-01      FALSE
+
+pathways significant in both cohorts, same direction: 14 
+null device 
+          1 
