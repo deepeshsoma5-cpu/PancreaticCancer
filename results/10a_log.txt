@@ -1,0 +1,39 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+genes passing p < 0.01: 40 
+Warning message:
+Starting in glmnet 5.1, the default Cox tie-handling method will change from 'breslow' to 'efron' (matching survival::coxph). To silence this message and lock in the v5.0 default, pass cox.ties = 'breslow' explicitly. To preview the v5.1 behavior, pass cox.ties = 'efron'. 
+
+===== LOCKED SIGNATURE =====
+    gene safe_name        coef
+  ARNTL2    ARNTL2  0.17877096
+ CYP27A1   CYP27A1 -0.10546237
+     MET       MET  0.04990648
+ SIPA1L2   SIPA1L2 -0.02634077
+    DPYD      DPYD  0.01918272
+ SLC16A2   SLC16A2 -0.01613783
+  MICAL1    MICAL1 -0.01478595
+    CAV2      CAV2  0.01172584
+(positive coef = higher expression, higher risk)
+
+===== TRAINING (TCGA) PERFORMANCE, OPTIMISTIC =====
+apparent c-index: 0.706 
+log-rank p: 0.000176 
+hazard ratio high vs low (95% ci): 2.27 1.46 3.53 
+Ignoring unknown labels:
+• colour : "Strata"
+null device 
+          1 
+
+===== MULTIVARIATE COX (TCGA, n = 121 ) =====
+          exp(coef) lower .95 upper .95     p
+risk_z        1.921     1.497     2.466 0.000
+stage_num     1.102     0.664     1.829 0.706
+age           1.013     0.990     1.037 0.275
+
+proportional hazards check:
+           chisq df     p
+risk_z    3.6866  1 0.055
+stage_num 3.4662  1 0.063
+age       0.0417  1 0.838
+GLOBAL    7.0458  3 0.070
