@@ -1,0 +1,332 @@
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Setting options('download.file.method.GEOquery'='auto')
+Setting options('GEOquery.inmemory.gpl'=FALSE)
+
+
+########## GSE71729 ##########
+Found 1 file(s)
+GSE71729_series_matrix.txt.gz
+
+platform: GPL20769  samples: 357  probes: 19749 
+title: Virtual Microdissection of Pancreatic Ductal Adenocarcinoma Reveals Tumor and Stroma Subtypes. 
+
+clinical columns:
+ [1] "status"                         "source_name_ch1"               
+ [3] "characteristics_ch1"            "source_name_ch2"               
+ [5] "characteristics_ch2"            "characteristics_ch2.1"         
+ [7] "characteristics_ch2.2"          "characteristics_ch2.3"         
+ [9] "characteristics_ch2.4"          "characteristics_ch2.5"         
+[11] "cell line/tissue:ch2"           "death_event_1death_0censor:ch2"
+[13] "survival_months:ch2"            "tissue type:ch2"               
+
+first 3 rows:
+                          status source_name_ch1
+GSM1843893 Public on Sep 07 2015 Human Reference
+GSM1843894 Public on Sep 07 2015 Human Reference
+GSM1843895 Public on Sep 07 2015 Human Reference
+                                   characteristics_ch1 source_name_ch2
+GSM1843893 sample type: Stratagene Human reference RNA        CellLine
+GSM1843894 sample type: Stratagene Human reference RNA        CellLine
+GSM1843895 sample type: Stratagene Human reference RNA        CellLine
+                characteristics_ch2                  characteristics_ch2.1
+GSM1843893  cell line/tissue: BXPC3 tumor_subtype_0na_1classical_2basal: 2
+GSM1843894 cell line/tissue: Capan1 tumor_subtype_0na_1classical_2basal: 2
+GSM1843895 cell line/tissue: Capan2 tumor_subtype_0na_1classical_2basal: 2
+                                   characteristics_ch2.2 characteristics_ch2.3
+GSM1843893 stroma_subtype_0na_1low_2normal_3activated: 1                      
+GSM1843894 stroma_subtype_0na_1low_2normal_3activated: 1                      
+GSM1843895 stroma_subtype_0na_1low_2normal_3activated: 1                      
+           characteristics_ch2.4 characteristics_ch2.5 cell line/tissue:ch2
+GSM1843893                                                            BXPC3
+GSM1843894                                                           Capan1
+GSM1843895                                                           Capan2
+           death_event_1death_0censor:ch2 survival_months:ch2 tissue type:ch2
+GSM1843893                           <NA>                <NA>            <NA>
+GSM1843894                           <NA>                <NA>            <NA>
+GSM1843895                           <NA>                <NA>            <NA>
+
+-- status --
+Public on Sep 07 2015 
+                  357 
+
+-- source_name_ch1 --
+Human Reference 
+            357 
+
+-- characteristics_ch1 --
+sample type: Stratagene Human reference RNA 
+                                        357 
+
+-- source_name_ch2 --
+
+Pancreas_Primary  Pancreas_Normal     Liver_Normal Liver_Metastasis 
+             145               46               27               25 
+     Lung_Normal         CellLine 
+              19               17 
+
+-- characteristics_ch2 --
+
+ cell line/tissue: Pancreas     cell line/tissue: Liver 
+                        191                          52 
+     cell line/tissue: Lung cell line/tissue: LymphNode 
+                         27                          19 
+cell line/tissue: Diaphragm    cell line/tissue: Spleen 
+                         13                          11 
+
+-- characteristics_ch2.1 --
+
+                  tissue type: Primary                    tissue type: Normal 
+                                   145                                    134 
+               tissue type: Metastasis tumor_subtype_0na_1classical_2basal: 2 
+                                    61                                     15 
+tumor_subtype_0na_1classical_2basal: 0 
+                                     2 
+
+-- characteristics_ch2.2 --
+
+       tumor_subtype_0na_1classical_2basal: 0 
+                                          134 
+       tumor_subtype_0na_1classical_2basal: 1 
+                                           43 
+       tumor_subtype_0na_1classical_2basal: 2 
+                                           38 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           15 
+                           survival_months: 7 
+                                           10 
+                           survival_months: 1 
+                                            9 
+
+-- characteristics_ch2.3 --
+
+stroma_subtype_0na_1low_2normal_3activated: 0 
+                                          134 
+                death_event_1death_0censor: 1 
+                                           84 
+                death_event_1death_0censor: 0 
+                                           41 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           40 
+stroma_subtype_0na_1low_2normal_3activated: 3 
+                                           21 
+stroma_subtype_0na_1low_2normal_3activated: 2 
+                                           20 
+
+-- characteristics_ch2.4 --
+
+                                       tumor_subtype_0na_1classical_2basal: 1 
+                                   232                                     89 
+tumor_subtype_0na_1classical_2basal: 2 
+                                    36 
+
+-- characteristics_ch2.5 --
+
+                                              
+                                          232 
+stroma_subtype_0na_1low_2normal_3activated: 3 
+                                           78 
+stroma_subtype_0na_1low_2normal_3activated: 2 
+                                           30 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           17 
+
+-- cell line/tissue:ch2 --
+
+ Pancreas     Liver      Lung LymphNode Diaphragm    Spleen 
+      191        52        27        19        13        11 
+
+-- death_event_1death_0censor:ch2 --
+
+ 1  0 
+84 41 
+
+-- survival_months:ch2 --
+
+ 7  1 13  6  8 18 
+10  9  7  7  7  6 
+
+-- tissue type:ch2 --
+
+   Primary     Normal Metastasis 
+       145        134         61 
+
+
+########## GSE21501 ##########
+Found 1 file(s)
+GSE21501_series_matrix.txt.gz
+
+platform: GPL4133  samples: 132  probes: 45220 
+title: A six-gene signature predicts survival of patients with localized pancreatic ductal adenocarcinoma 
+
+clinical columns:
+ [1] "status"                "source_name_ch1"       "characteristics_ch1"  
+ [4] "source_name_ch2"       "characteristics_ch2"   "characteristics_ch2.1"
+ [7] "characteristics_ch2.2" "characteristics_ch2.3" "characteristics_ch2.4"
+[10] "characteristics_ch2.5" "characteristics_ch2.6" "n stage:ch2"          
+[13] "os event:ch2"          "os time:ch2"           "t stage:ch2"          
+[16] "tissue:ch1"            "tissue:ch2"           
+
+first 3 rows:
+                         status source_name_ch1
+GSM535948 Public on Jul 19 2010 Human Reference
+GSM535949 Public on Jul 19 2010 Human Reference
+GSM535950 Public on Jul 19 2010 Human Reference
+                             characteristics_ch1 source_name_ch2
+GSM535948 tissue: Stratagene Human reference RNA Pancreas Tissue
+GSM535949 tissue: Stratagene Human reference RNA Pancreas Tissue
+GSM535950 tissue: Stratagene Human reference RNA Pancreas Tissue
+                               characteristics_ch2
+GSM535948 tissue: Patient Primary Pancreatic Tumor
+GSM535949 tissue: Patient Primary Pancreatic Tumor
+GSM535950 tissue: Patient Primary Pancreatic Tumor
+                                characteristics_ch2.1 characteristics_ch2.2
+GSM535948 tumor type: 12R2585B Mix Pancreas (20/80/0)                      
+GSM535949            tumor type: 12R2587.1Mix(50%N) P                      
+GSM535950            tumor type: 12R2587.2Mix(80%N) P                      
+          characteristics_ch2.3 characteristics_ch2.4 characteristics_ch2.5
+GSM535948                                                                  
+GSM535949                                                                  
+GSM535950                                                                  
+          characteristics_ch2.6 n stage:ch2 os event:ch2 os time:ch2
+GSM535948                              <NA>         <NA>        <NA>
+GSM535949                              <NA>         <NA>        <NA>
+GSM535950                              <NA>         <NA>        <NA>
+          t stage:ch2                     tissue:ch1
+GSM535948        <NA> Stratagene Human reference RNA
+GSM535949        <NA> Stratagene Human reference RNA
+GSM535950        <NA> Stratagene Human reference RNA
+                                tissue:ch2
+GSM535948 Patient Primary Pancreatic Tumor
+GSM535949 Patient Primary Pancreatic Tumor
+GSM535950 Patient Primary Pancreatic Tumor
+
+-- status --
+Public on Jul 19 2010 
+                  132 
+
+-- source_name_ch1 --
+Human Reference 
+            132 
+
+-- characteristics_ch1 --
+
+   tissue: Stratagene Human reference RNA 
+                                      131 
+reference: Stratagene Human reference RNA 
+                                        1 
+
+-- source_name_ch2 --
+Pancreas Tissue 
+            132 
+
+-- characteristics_ch2 --
+
+tissue: Patient Primary Pancreatic Tumor 
+                                      30 
+                              os time: 7 
+                                       8 
+                             os time: 13 
+                                       7 
+                              os time: 6 
+                                       7 
+                              os time: 8 
+                                       7 
+                             os time: 18 
+                                       6 
+
+-- characteristics_ch2.1 --
+
+                                os event: 1 
+                                         66 
+                                os event: 0 
+                                         36 
+tumor type: 12R2585B Mix Pancreas (20/80/0) 
+                                          1 
+           tumor type: 12R2587.1Mix(50%N) P 
+                                          1 
+           tumor type: 12R2587.2Mix(80%N) P 
+                                          1 
+                  tumor type: 12R2685T Panc 
+                                          1 
+
+-- characteristics_ch2.2 --
+
+t stage: 3            t stage: 2  t stage:  t stage: 1 t stage: 4 
+        79         30         16          4          2          1 
+
+-- characteristics_ch2.3 --
+
+n stage: 1            n stage: 0  n stage:  
+        73         30         28          1 
+
+-- characteristics_ch2.4 --
+
+tissue: Patient Primary Pancreatic Tumor 
+                                     102 
+                                         
+                                      30 
+
+-- characteristics_ch2.5 --
+
+        risk group: High Risk          risk group: Low Risk 
+                           59                            41 
+                               tumor type: Pancreatic Tumor 
+                           30                             1 
+tumor type: Pancreatic Tumor. 
+                            1 
+
+-- characteristics_ch2.6 --
+
+                     risk group: Low Risk 
+                 130                    2 
+
+-- n stage:ch2 --
+
+ 1  0    
+73 28  1 
+
+-- os event:ch2 --
+
+ 1  0 
+66 36 
+
+-- os time:ch2 --
+
+ 7 13  6  8 18  1 
+ 8  7  7  7  6  5 
+
+-- t stage:ch2 --
+
+ 3  2     1  4 
+79 16  4  2  1 
+
+-- tissue:ch1 --
+Stratagene Human reference RNA 
+                           131 
+
+-- tissue:ch2 --
+Patient Primary Pancreatic Tumor 
+                             132 
