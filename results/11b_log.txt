@@ -3,10 +3,6 @@ genes tested in both: 13974
 spearman correlation of t stats between cohorts: 0.768 
 genes de in tcga (fdr < 0.05): 5925 
 of those, same direction and p < 0.05 in external: 3041 
-Downloading gene sets (first use only, may take a few minutes)...
-Warning message:
-In file.rename(tmp_path, zip_path) :
-  cannot rename file '/tmp/RtmpqGLMnM/file77633ed8384c.zip' to '/home/codespace/.cache/R/msigdbr/msigdb.2026.1.zip', reason 'Invalid cross-device link'
 
 ===== HALLMARK PATHWAYS (Up = higher in high risk) =====
                        set NGenes Direction_tcga PValue_tcga FDR_tcga
