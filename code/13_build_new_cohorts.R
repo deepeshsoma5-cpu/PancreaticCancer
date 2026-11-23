@@ -1,7 +1,24 @@
 # build gse71729 (moffitt) and gse21501 as gene level cohorts
 # tumors with survival only, one row per gene symbol
+# geo downloads fail sometimes so getGEO is retried and cached files are reused
 library(GEOquery)
 library(Biobase)
+
+get_geo <- function(id) {
+  f <- file.path("data", paste0(id, "_series_matrix.txt.gz"))
+  for (i in 1:5) {
+    r <- tryCatch({
+      if (file.exists(f)) getGEO(filename = f, destdir = "data/", GSEMatrix = TRUE)
+      else getGEO(id, GSEMatrix = TRUE, destdir = "data/")
+    }, error = function(e) { cat("try", i, "failed for", id, ":", conditionMessage(e), "\n"); NULL })
+    if (!is.null(r)) {
+      if (inherits(r, "ExpressionSet")) return(r)
+      return(r[[1]])
+    }
+    Sys.sleep(10)
+  }
+  stop("could not get ", id, " after 5 tries")
+}
 
 symbol_col <- function(fd) {
   hit <- grep("^gene_?symbol$|^symbol$|gene symbol", colnames(fd), ignore.case = TRUE, value = TRUE)
@@ -37,8 +54,7 @@ summarize <- function(name, ex, clin) {
 }
 
 # ---- gse71729 ----
-g1 <- getGEO("GSE71729", GSEMatrix = TRUE, destdir = "data/")
-e1 <- g1[[1]]
+e1 <- get_geo("GSE71729")
 pd <- pData(e1)
 need <- c("tissue type:ch2", "survival_months:ch2", "death_event_1death_0censor:ch2")
 stopifnot(all(need %in% colnames(pd)))
@@ -58,8 +74,7 @@ saveRDS(list(expr = ex1, clin = clin1), "data/gse71729_tumors.rds")
 summarize("GSE71729 (primary tumors with survival)", ex1, clin1)
 
 # ---- gse21501 ----
-g2 <- getGEO("GSE21501", GSEMatrix = TRUE, destdir = "data/")
-e2 <- g2[[1]]
+e2 <- get_geo("GSE21501")
 pd2 <- pData(e2)
 stopifnot(all(c("os time:ch2", "os event:ch2") %in% colnames(pd2)))
 time2 <- suppressWarnings(as.numeric(pd2[["os time:ch2"]]))

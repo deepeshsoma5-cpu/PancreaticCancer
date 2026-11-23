@@ -24,6 +24,10 @@ Welcome to Bioconductor
 
 Setting options('download.file.method.GEOquery'='auto')
 Setting options('GEOquery.inmemory.gpl'=FALSE)
-Error in open.connection(x, "rb") : cannot open the connection
-Calls: getGEO ... getAndParseGSEMatrices -> getDirListing -> <Anonymous> -> read_html.default
+Using locally cached version of GPL20769 found here:
+data//GPL20769.soft.gz 
+platform: GPL20769 
+Error in symbol_col(fd) : 
+  no symbol column, columns are: ID, ORF, GENE_NAME
+Calls: to_genes ... is.factor -> [[ -> [[.data.frame -> <Anonymous> -> symbol_col
 Execution halted
