@@ -1,0 +1,25 @@
+Found 1 file(s)
+GSE62452_series_matrix.txt.gz
+Using locally cached version: data//GSE62452_series_matrix.txt.gz
+Using locally cached version of GPL6244 found here:
+data//GPL6244.soft.gz 
+Platform: GPL6244 
+
+Series title: Microarray gene-expression profiles of 69 pancreatic tumors and 61 adjacent non-tumor tissue from patients with pancreatic ductal adenocarcinoma 
+
+Series description (check how survival status is coded):
+In order to identify biologically relevant tumor markers , we  analyzed gene expression profiling of tumor and adjacent non-tumor tissues from PDAC cases. We compared the microarray gene-expression profiles of MIF-high and MIF low expressing tumors as detrmined by qRT-PCR. Affymetrix gene-expression analysis was done in two sets. Affymetrix data from sample number 1-90 were earlier submited by us as GEO accession#: GSE28735. The batch effect between the two sets of data was removed using Partek Genomic Suite and this normalized data was submitted to GEO in this submission. All the analysis was performed using the merged data set. 
+
+Tumors: 69  | with valid survival: 65 
+
+===== EXTERNAL COHORT (GSE62452, tumors) =====
+Patients (n): 65 
+Status 1: 49  Status 0: 16 
+Median months, status 1: 11.6 | status 0: 25.6 
+Genes (unique symbols): 23307 
+Genes shared with TCGA: 13982 
+
+Stage:
+
+>IIB   IB  IIA  IIB  III   IV  IVA  IVB 
+   1    4   10   34   10    3    2    1 
