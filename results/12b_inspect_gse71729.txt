@@ -1,0 +1,148 @@
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Setting options('download.file.method.GEOquery'='auto')
+Setting options('GEOquery.inmemory.gpl'=FALSE)
+Found 1 file(s)
+GSE71729_series_matrix.txt.gz
+Using locally cached version: data//GSE71729_series_matrix.txt.gz
+Using locally cached version of GPL20769 found here:
+data//GPL20769.soft.gz 
+
+platform: GPL20769  samples: 357 
+
+clinical columns:
+ [1] "characteristics_ch1"                           
+ [2] "characteristics_ch2"                           
+ [3] "characteristics_ch2.1"                         
+ [4] "characteristics_ch2.2"                         
+ [5] "characteristics_ch2.3"                         
+ [6] "characteristics_ch2.4"                         
+ [7] "characteristics_ch2.5"                         
+ [8] "cell line/tissue:ch2"                          
+ [9] "death_event_1death_0censor:ch2"                
+[10] "stroma_subtype_0na_1low_2normal_3activated:ch2"
+[11] "survival_months:ch2"                           
+[12] "tissue type:ch2"                               
+[13] "tumor_subtype_0na_1classical_2basal:ch2"       
+
+-- characteristics_ch1 --
+sample type: Stratagene Human reference RNA 
+                                        357 
+
+-- characteristics_ch2 --
+
+ cell line/tissue: Pancreas     cell line/tissue: Liver 
+                        191                          52 
+     cell line/tissue: Lung cell line/tissue: LymphNode 
+                         27                          19 
+cell line/tissue: Diaphragm    cell line/tissue: Spleen 
+                         13                          11 
+
+-- characteristics_ch2.1 --
+
+                  tissue type: Primary                    tissue type: Normal 
+                                   145                                    134 
+               tissue type: Metastasis tumor_subtype_0na_1classical_2basal: 2 
+                                    61                                     15 
+tumor_subtype_0na_1classical_2basal: 0 
+                                     2 
+
+-- characteristics_ch2.2 --
+
+       tumor_subtype_0na_1classical_2basal: 0 
+                                          134 
+       tumor_subtype_0na_1classical_2basal: 1 
+                                           43 
+       tumor_subtype_0na_1classical_2basal: 2 
+                                           38 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           15 
+                           survival_months: 7 
+                                           10 
+                           survival_months: 1 
+                                            9 
+
+-- characteristics_ch2.3 --
+
+stroma_subtype_0na_1low_2normal_3activated: 0 
+                                          134 
+                death_event_1death_0censor: 1 
+                                           84 
+                death_event_1death_0censor: 0 
+                                           41 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           40 
+stroma_subtype_0na_1low_2normal_3activated: 3 
+                                           21 
+stroma_subtype_0na_1low_2normal_3activated: 2 
+                                           20 
+
+-- characteristics_ch2.4 --
+
+                                       tumor_subtype_0na_1classical_2basal: 1 
+                                   232                                     89 
+tumor_subtype_0na_1classical_2basal: 2 
+                                    36 
+
+-- characteristics_ch2.5 --
+
+                                              
+                                          232 
+stroma_subtype_0na_1low_2normal_3activated: 3 
+                                           78 
+stroma_subtype_0na_1low_2normal_3activated: 2 
+                                           30 
+stroma_subtype_0na_1low_2normal_3activated: 1 
+                                           17 
+
+-- cell line/tissue:ch2 --
+
+ Pancreas     Liver      Lung LymphNode Diaphragm    Spleen 
+      191        52        27        19        13        11 
+
+-- death_event_1death_0censor:ch2 --
+
+ 1  0 
+84 41 
+
+-- stroma_subtype_0na_1low_2normal_3activated:ch2 --
+
+  0   3   1   2 
+136  99  72  50 
+
+-- survival_months:ch2 --
+
+ 7  1 13  6  8 18 
+10  9  7  7  7  6 
+
+-- tissue type:ch2 --
+
+   Primary     Normal Metastasis 
+       145        134         61 
+
+-- tumor_subtype_0na_1classical_2basal:ch2 --
+
+  0   1   2 
+136 132  89 

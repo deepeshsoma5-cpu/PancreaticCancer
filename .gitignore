@@ -10,3 +10,4 @@ results/*.rds
 *.rds
 .venv/
 install5.log
+install6.log
