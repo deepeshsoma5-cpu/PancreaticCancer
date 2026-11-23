@@ -1,0 +1,110 @@
+Found 1 file(s)
+GSE62452_series_matrix.txt.gz
+
+===== GSE62452 =====
+Samples: 130  Features (probes): 33297 
+Platform: GPL6244 
+
+Clinical columns:
+ [1] "title"                   "geo_accession"          
+ [3] "status"                  "submission_date"        
+ [5] "last_update_date"        "type"                   
+ [7] "channel_count"           "source_name_ch1"        
+ [9] "organism_ch1"            "characteristics_ch1"    
+[11] "characteristics_ch1.1"   "characteristics_ch1.2"  
+[13] "characteristics_ch1.3"   "characteristics_ch1.4"  
+[15] "molecule_ch1"            "extract_protocol_ch1"   
+[17] "label_ch1"               "label_protocol_ch1"     
+[19] "taxid_ch1"               "hyb_protocol"           
+[21] "scan_protocol"           "description"            
+[23] "data_processing"         "platform_id"            
+[25] "contact_name"            "contact_email"          
+[27] "contact_phone"           "contact_laboratory"     
+[29] "contact_institute"       "contact_address"        
+[31] "contact_city"            "contact_state"          
+[33] "contact_zip/postal_code" "contact_country"        
+[35] "supplementary_file"      "data_row_count"         
+[37] "grading:ch1"             "Stage:ch1"              
+[39] "survival months:ch1"     "survival status:ch1"    
+[41] "tissue:ch1"             
+
+First 5 rows of the relevant columns:
+                          status                   characteristics_ch1
+GSM1527105 Public on Jul 01 2016              tissue: Pancreatic tumor
+GSM1527106 Public on Jul 01 2016 tissue: adjacent pancreatic non-tumor
+GSM1527107 Public on Jul 01 2016              tissue: Pancreatic tumor
+GSM1527108 Public on Jul 01 2016 tissue: adjacent pancreatic non-tumor
+GSM1527109 Public on Jul 01 2016              tissue: Pancreatic tumor
+           characteristics_ch1.1 characteristics_ch1.2 characteristics_ch1.3
+GSM1527105           grading: G2            Stage: IIA survival months: 51.1
+GSM1527106           grading: G2            Stage: IIA                      
+GSM1527107           grading: G3            Stage: III  survival months: 6.9
+GSM1527108           grading: G3            Stage: III                      
+GSM1527109           grading: G3            Stage: IIA  survival months: 2.7
+           characteristics_ch1.4 Stage:ch1 survival months:ch1
+GSM1527105    survival status: 1       IIA                51.1
+GSM1527106                             IIA                <NA>
+GSM1527107    survival status: 1       III                 6.9
+GSM1527108                             III                <NA>
+GSM1527109    survival status: 1       IIA                 2.7
+           survival status:ch1                    tissue:ch1
+GSM1527105                   1              Pancreatic tumor
+GSM1527106                <NA> adjacent pancreatic non-tumor
+GSM1527107                   1              Pancreatic tumor
+GSM1527108                <NA> adjacent pancreatic non-tumor
+GSM1527109                   1              Pancreatic tumor
+
+-- status --
+Public on Jul 01 2016 
+                  130 
+
+-- characteristics_ch1 --
+
+             tissue: Pancreatic tumor tissue: adjacent pancreatic non-tumor 
+                                   69                                    61 
+
+-- characteristics_ch1.1 --
+
+grading: G2 grading: G3 grading: G1 grading: G4 grading: Gx 
+         64          59           3           2           2 
+
+-- characteristics_ch1.2 --
+
+ Stage: IIB  Stage: III  Stage: IIA   Stage: IB   Stage: IV  Stage: IVA 
+         64          26          18           7           7           4 
+Stage: >IIB  Stage: IVB 
+          2           2 
+
+-- characteristics_ch1.3 --
+
+                         survival months: ?  survival months: 9.8 
+                   61                     3                     2 
+ survival months: 0.9  survival months: 1.2 survival months: 10.3 
+                    1                     1                     1 
+survival months: 10.6 survival months: 10.8 
+                    1                     1 
+
+-- characteristics_ch1.4 --
+
+                   survival status: 1 survival status: 0 survival status: ? 
+                61                 50                 16                  3 
+
+-- Stage:ch1 --
+
+ IIB  III  IIA   IB   IV  IVA >IIB  IVB 
+  64   26   18    7    7    4    2    2 
+
+-- survival months:ch1 --
+
+   ?  9.8  0.9  1.2 10.3 10.6 10.8 10.9 
+   3    2    1    1    1    1    1    1 
+
+-- survival status:ch1 --
+
+ 1  0  ? 
+50 16  3 
+
+-- tissue:ch1 --
+
+             Pancreatic tumor adjacent pancreatic non-tumor 
+                           69                            61 
