@@ -27,20 +27,41 @@ Setting options('GEOquery.inmemory.gpl'=FALSE)
 Using locally cached version of GPL20769 found here:
 data//GPL20769.soft.gz 
 platform: GPL20769 
-using annotation column: GENE_NAME | examples: alpha-1-B glycoprotein, APOBEC1 complementation factor, ataxin 2-binding protein 1, AIG2-like domain 1, alpha-2-macroglobulin, alpha-2-macroglobulin-like 1 
+annotation columns and how many tcga genes they match:
+       ID       ORF GENE_NAME 
+    12754     12754        23 
+using annotation column: ID | examples: A1BG, A1CF, A2BP1, A2LD1, A2M, A2ML1 
 
 ===== GSE71729 (primary tumors with survival) =====
 patients: 123  events: 83  censored: 40 
 median time, events: 13 | censored: 18 
-genes: 19704  shared with tcga: 23 
-WARNING: very few shared genes, the gene names probably didnt map right
+genes: 19749  shared with tcga: 12754 
 Using locally cached version of GPL4133 found here:
 data//GPL4133.soft.gz 
 
 platform: GPL4133 
+annotation columns and how many tcga genes they match:
+                  ID                  COL                  ROW 
+                   0                    0                    0 
+                NAME              SPOT_ID         CONTROL_TYPE 
+                   0                    0                    0 
+              REFSEQ               GB_ACC                 GENE 
+                   0                    0                    0 
+         GENE_SYMBOL            GENE_NAME           UNIGENE_ID 
+               12754                   23                    0 
+          ENSEMBL_ID              TIGR_ID     ACCESSION_STRING 
+                   0                    0                    0 
+CHROMOSOMAL_LOCATION             CYTOBAND          DESCRIPTION 
+                   0                    0                    0 
+               GO_ID             SEQUENCE            SPOT_ID.1 
+                   0                    0                    0 
+               ORDER 
+                   0 
 using annotation column: GENE_SYMBOL | examples: APOBEC3B, ATP11B, LOC100132006, DNAJA1, EHMT2, RPL23 
 
 ===== GSE21501 (tumors with survival) =====
 patients: 102  events: 66  censored: 36 
 median time, events: 13 | censored: 20 
 genes: 19749  shared with tcga: 12754 
+
+genes present in all four cohorts: 12603 

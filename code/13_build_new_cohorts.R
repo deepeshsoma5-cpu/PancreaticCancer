@@ -1,8 +1,11 @@
 # build gse71729 (moffitt) and gse21501 as gene level cohorts
 # tumors with survival only, one row per gene symbol
-# geo downloads fail sometimes so getGEO is retried and cached files are reused
+# the symbol column is picked by testing every annotation column against tcga gene names
 library(GEOquery)
 library(Biobase)
+
+tc <- readRDS("data/tcga_paad_pdac.rds")
+ref <- rownames(tc$logcpm)
 
 get_geo <- function(id) {
   f <- file.path("data", paste0(id, "_series_matrix.txt.gz"))
@@ -20,20 +23,21 @@ get_geo <- function(id) {
   stop("could not get ", id, " after 5 tries")
 }
 
-# try the column names in order, symbol before name
+clean_sym <- function(x) trimws(sub(" ?(///|//) .*", "", as.character(x)))
+
+# which annotation column has the most gene names that tcga also has?
 symbol_col <- function(fd) {
-  pats <- c("^gene_?symbol$", "^symbol$", "gene symbol", "^gene_?name$")
-  for (p in pats) {
-    hit <- grep(p, colnames(fd), ignore.case = TRUE, value = TRUE)
-    if (length(hit)) return(hit[1])
-  }
-  stop("no symbol column, columns are: ", paste(colnames(fd), collapse = ", "))
+  sc <- sapply(colnames(fd), function(cn) length(intersect(unique(clean_sym(fd[[cn]])), ref)))
+  cat("annotation columns and how many tcga genes they match:\n")
+  print(sc)
+  if (max(sc) < 5000) stop("no annotation column matches tcga gene names well")
+  names(which.max(sc))
 }
 
 # probes -> genes, keeping the most variable probe for each symbol
 to_genes <- function(ex, fd) {
   col <- symbol_col(fd)
-  sym <- trimws(sub(" /// .*", "", as.character(fd[[col]])))
+  sym <- clean_sym(fd[[col]])
   cat("using annotation column:", col, "| examples:", paste(head(sym[sym != ""], 6), collapse = ", "), "\n")
   ok <- !is.na(sym) & sym != "" & sym != "---" & sym != "NA"
   ex <- ex[ok, , drop = FALSE]
@@ -49,16 +53,14 @@ to_genes <- function(ex, fd) {
   ex
 }
 
-tc <- readRDS("data/tcga_paad_pdac.rds")
-
 summarize <- function(name, ex, clin) {
-  shared <- length(intersect(rownames(ex), rownames(tc$logcpm)))
+  shared <- length(intersect(rownames(ex), ref))
   cat("\n=====", name, "=====\n")
   cat("patients:", nrow(clin), " events:", sum(clin$status == 1), " censored:", sum(clin$status == 0), "\n")
   cat("median time, events:", round(median(clin$time_months[clin$status == 1]), 1),
       "| censored:", round(median(clin$time_months[clin$status == 0]), 1), "\n")
   cat("genes:", nrow(ex), " shared with tcga:", shared, "\n")
-  if (shared < 5000) cat("WARNING: very few shared genes, the gene names probably didnt map right\n")
+  if (shared < 8000) cat("WARNING: very few shared genes, the gene names probably didnt map right\n")
 }
 
 # ---- gse71729 ----
@@ -97,3 +99,8 @@ clin2 <- data.frame(sample = colnames(ex2), time_months = time2[keep2], status =
 rownames(clin2) <- clin2$sample
 saveRDS(list(expr = ex2, clin = clin2), "data/gse21501_tumors.rds")
 summarize("GSE21501 (tumors with survival)", ex2, clin2)
+
+# ---- all four cohorts together ----
+e5 <- readRDS("data/gse62452_tumors.rds")
+all4 <- Reduce(intersect, list(rownames(tc$logcpm), rownames(ex1), rownames(ex2), rownames(e5$expr)))
+cat("\ngenes present in all four cohorts:", length(all4), "\n")
