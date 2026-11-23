@@ -8,3 +8,4 @@ GDCdata/
 data/
 results/*.rds
 *.rds
+.venv/

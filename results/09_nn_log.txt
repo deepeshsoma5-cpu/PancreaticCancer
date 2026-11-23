@@ -1,0 +1,16 @@
+patients: 145  genes: 2000
+done with repeat 1 of 10
+done with repeat 2 of 10
+done with repeat 3 of 10
+done with repeat 4 of 10
+done with repeat 5 of 10
+done with repeat 6 of 10
+done with repeat 7 of 10
+done with repeat 8 of 10
+done with repeat 9 of 10
+done with repeat 10 of 10
+
+===== CROSS-VALIDATED C-INDEX (TCGA only) =====
+Cox-LASSO              mean 0.615 | sd 0.083
+RandomSurvivalForest   mean 0.612 | sd 0.073
+NeuralNetwork          mean 0.608 | sd 0.079
