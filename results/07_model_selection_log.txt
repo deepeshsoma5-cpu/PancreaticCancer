@@ -1,0 +1,18 @@
+Training patients: 145 | candidate genes: 2000 
+Finished repeat 1 of 3 
+Finished repeat 2 of 3 
+Finished repeat 3 of 3 
+There were 15 warnings (use warnings() to see them)
+
+===== CROSS-VALIDATED C-INDEX (TCGA only) =====
+Cox-LASSO              mean 0.535 | sd 0.067 | median genes 5
+RandomSurvivalForest   mean 0.578 | sd 0.054 | median genes 10
+
+Mean difference (LASSO - forest): -0.044 | LASSO won 3 of 15 folds
+
+Most frequently selected genes (stability):
+
+ SLC19A3      LTK     GHRL  CNTNAP2     LY6D     RGS7     DSG3     ASB2 
+      21       17       15       13       11       10        7        5 
+C16orf74    SYT12   ZNF488      CFP   CLEC4F     EREG     IL10 
+       5        5        5        4        4        4        4 
