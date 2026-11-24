@@ -1,0 +1,16 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+
+##### GSE21501 (fresh, primary test) | patients 102 | events 66 
+new pooled signature       c-index 0.551 (95% ci 0.474-0.631) | shuffle p 0.1050 | log-rank p 0.4744 | HR 1.20 (0.74-1.94)
+   time dependent auc at 12/24/36 months: 0.567 / 0.455 / 0.538 
+old tcga-only signature    c-index 0.565 (95% ci 0.480-0.655) | shuffle p 0.0636 | log-rank p 0.6726 | HR 1.11 (0.68-1.81)
+   time dependent auc at 12/24/36 months: 0.588 / 0.505 / 0.527 
+Ignoring unknown labels:
+• colour : "Strata"
+
+##### GSE62452 (viewed before, secondary) | patients 65 | events 49 
+new pooled signature       c-index 0.548 (95% ci 0.446-0.641) | shuffle p 0.1562 | log-rank p 0.1175 | HR 1.59 (0.89-2.85)
+   time dependent auc at 12/24/36 months: 0.517 / 0.741 / 0.761 
+old tcga-only signature    c-index 0.592 (95% ci 0.500-0.676) | shuffle p 0.0276 | log-rank p 0.0015 | HR 2.73 (1.43-5.20)
+   time dependent auc at 12/24/36 months: 0.587 / 0.813 / 0.807 
