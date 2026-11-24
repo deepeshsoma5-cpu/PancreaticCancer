@@ -1,5 +1,5 @@
 # pooled training on tcga + gse71729, cox lasso only
-# the test cohorts (gse21501, gse62452) are NOT loaded in this script
+# test cohorts: only their gene names are read (to keep genes all four share), no expression or outcomes used
 source("code/helpers.R")
 set.seed(42)
 nrep <- as.integer(Sys.getenv("N_REPEATS", "10"))
@@ -8,16 +8,22 @@ pcut <- 0.01
 
 tc <- readRDS("data/tcga_paad_pdac.rds")
 mo <- readRDS("data/gse71729_tumors.rds")
-drop <- if (file.exists("results/14_dropped_moffitt_samples.txt")) readLines("results/14_dropped_moffitt_samples.txt") else character(0)
+stopifnot(file.exists("results/overlap_drop_gse71729.txt"))
+drop <- readLines("results/overlap_drop_gse71729.txt")
 drop <- drop[drop != ""]
 mo$expr <- mo$expr[, !colnames(mo$expr) %in% drop, drop = FALSE]
 mo$clin <- mo$clin[colnames(mo$expr), ]
+message("moffitt left after overlap drop: ", ncol(mo$expr))
+stopifnot(ncol(mo$expr) == 37)
 
 xa <- tc$logcpm
 ca <- tc$clin[colnames(xa), ]
+stopifnot(!anyNA(ca$time_months), !anyNA(ca$status))
 xb <- mo$expr
 cb <- mo$clin[colnames(xb), ]
 genes <- intersect(rownames(xa), rownames(xb))
+for (f in c("data/gse21501_tumors.rds", "data/gse62452_tumors.rds")) genes <- intersect(genes, rownames(readRDS(f)$expr))  # gene names only
+message("genes available in all four cohorts: ", length(genes))
 xa <- xa[genes, ]
 xb <- xb[genes, ]
 cat("tcga patients:", ncol(xa), " gse71729 patients:", ncol(xb), " shared genes:", length(genes), "\n")
