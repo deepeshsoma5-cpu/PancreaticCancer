@@ -1,0 +1,84 @@
+
+########## TCGA | patients 145 | high risk 72 
+populations estimated: 10 
+
+-- mcp-counter vs risk (rho > 0 = more in high risk) --
+                     pop     rho    p_cor p_wilcox  fdr_cor fdr_wilcox
+                 T cells -0.4066 4.94e-07 1.09e-05 4.94e-06   6.05e-05
+             CD8 T cells -0.3561 1.26e-05 2.52e-04 3.15e-05   4.76e-04
+   Cytotoxic lymphocytes -0.3382 3.54e-05 8.13e-05 7.08e-05   2.03e-04
+               B lineage -0.3069 1.86e-04 4.36e-04 2.33e-04   6.22e-04
+                NK cells -0.3071 1.84e-04 8.63e-04 2.33e-04   1.08e-03
+       Monocytic lineage -0.3106 1.54e-04 2.85e-04 2.33e-04   4.76e-04
+ Myeloid dendritic cells -0.3904 1.48e-06 1.21e-05 7.39e-06   6.05e-05
+             Neutrophils -0.2306 5.36e-03 1.05e-03 5.96e-03   1.17e-03
+       Endothelial cells -0.3729 4.55e-06 3.95e-05 1.52e-05   1.32e-04
+             Fibroblasts -0.0403 6.30e-01 3.75e-01 6.30e-01   3.75e-01
+
+risk vs stromal proxy: rho -0.25 (p 0.0022) | risk vs immune proxy: rho -0.42 (p 2.2e-07)
+risk hr per sd: unadjusted 1.98 (p 0.000) | adjusted for stromal+immune proxies 2.14 (p 0.000)
+
+-- checkpoint genes and cytolytic score (log scale difference) --
+                  gene diff_high_minus_low        p      fdr
+                 CD274               0.192 5.92e-01 0.592077
+                 PDCD1              -0.924 1.15e-04 0.000401
+                 CTLA4              -0.749 1.21e-03 0.001693
+                  LAG3              -0.208 1.31e-01 0.153294
+                 TIGIT              -0.828 8.16e-04 0.001427
+                HAVCR2              -0.612 7.07e-04 0.001427
+ cytolytic (GZMA+PRF1)              -0.666 6.34e-05 0.000401
+
+########## GSE62452 | patients 65 | high risk 32 
+populations estimated: 10 
+
+-- mcp-counter vs risk (rho > 0 = more in high risk) --
+                     pop     rho    p_cor p_wilcox fdr_cor fdr_wilcox
+                 T cells -0.2658 0.032638  0.10261 0.10879     0.3420
+             CD8 T cells -0.2342 0.060624  0.19760 0.15156     0.3952
+   Cytotoxic lymphocytes -0.0319 0.800122  0.71028 0.80012     0.7495
+               B lineage -0.2119 0.090140  0.33718 0.18028     0.5620
+                NK cells -0.0608 0.629921  0.55295 0.74968     0.7132
+       Monocytic lineage -0.1584 0.207079  0.57056 0.34513     0.7132
+ Myeloid dendritic cells -0.3090 0.012566  0.02132 0.06283     0.1066
+             Neutrophils -0.1114 0.376049  0.18418 0.53721     0.3952
+       Endothelial cells -0.4251 0.000468  0.00322 0.00468     0.0322
+             Fibroblasts -0.0529 0.674708  0.74949 0.74968     0.7495
+
+risk vs stromal proxy: rho -0.29 (p 0.02) | risk vs immune proxy: rho -0.30 (p 0.015)
+risk hr per sd: unadjusted 1.40 (p 0.013) | adjusted for stromal+immune proxies 1.40 (p 0.016)
+
+-- checkpoint genes and cytolytic score (log scale difference) --
+                  gene diff_high_minus_low      p   fdr
+                 CD274              0.2137 0.0753 0.264
+                 PDCD1             -0.0154 0.5975 0.597
+                 CTLA4             -0.1160 0.5185 0.597
+                  LAG3             -0.0719 0.1886 0.440
+                 TIGIT             -0.0811 0.5442 0.597
+                HAVCR2             -0.0727 0.4610 0.597
+ cytolytic (GZMA+PRF1)             -0.1942 0.0246 0.172
+
+########## replication across cohorts ##########
+                     pop rho_tcga fdr_cor_tcga rho_ext fdr_cor_ext same_dir
+               B lineage  -0.3069     2.33e-04 -0.2119     0.18028     TRUE
+             CD8 T cells  -0.3561     3.15e-05 -0.2342     0.15156     TRUE
+   Cytotoxic lymphocytes  -0.3382     7.08e-05 -0.0319     0.80012     TRUE
+       Endothelial cells  -0.3729     1.52e-05 -0.4251     0.00468     TRUE
+             Fibroblasts  -0.0403     6.30e-01 -0.0529     0.74968     TRUE
+       Monocytic lineage  -0.3106     2.33e-04 -0.1584     0.34513     TRUE
+ Myeloid dendritic cells  -0.3904     7.39e-06 -0.3090     0.06283     TRUE
+             Neutrophils  -0.2306     5.96e-03 -0.1114     0.53721     TRUE
+                NK cells  -0.3071     2.33e-04 -0.0608     0.74968     TRUE
+                 T cells  -0.4066     4.94e-06 -0.2658     0.10879     TRUE
+ replicated
+      FALSE
+      FALSE
+      FALSE
+       TRUE
+      FALSE
+      FALSE
+      FALSE
+      FALSE
+      FALSE
+      FALSE
+null device 
+          1 
