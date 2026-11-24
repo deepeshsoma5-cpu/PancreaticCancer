@@ -1,0 +1,16 @@
+signature genes present: 8 of 8 
+
+mean (basal markers - classical markers) by subtype code:
+    1     2 
+-0.55  1.39 
+labeling code 2 as basal-like
+
+===== all 123 moffitt | n 123 | basal-like 35 | events 83 
+risk score in basal vs classical: wilcoxon p 0.000596 | auc for basal 0.70
+basal-like vs classical survival: hr 1.85 (p 0.010)
+risk hr per sd: alone 1.19 (p 0.115) | adjusted for subtype 1.07 (p 0.570)
+
+===== 37 moffitt not duplicated in gse21501 | n 37 | basal-like 14 | events 26 
+risk score in basal vs classical: wilcoxon p 0.284 | auc for basal 0.61
+basal-like vs classical survival: hr 1.99 (p 0.093)
+risk hr per sd: alone 1.12 (p 0.599) | adjusted for subtype 0.92 (p 0.744)
