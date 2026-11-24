@@ -1,0 +1,7 @@
+n: 134 
+KRAS: or per sd risk alone 2.63 (p 0.000169) | adjusted 2.40 (p 0.000997) | immune proxy or 0.51 (p 0.0219)
+TP53: or per sd risk alone 2.11 (p 0.00119) | adjusted 2.04 (p 0.00299) | immune proxy or 0.86 (p 0.539)
+log(1+mutation count): risk alone p 0.00571 | adjusted p 0.0401 | immune proxy p 0.0566
+kras mutated by immune-proxy tertile:
+ low  mid high 
+0.84 0.73 0.40 
