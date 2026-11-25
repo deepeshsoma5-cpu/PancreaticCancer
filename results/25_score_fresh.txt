@@ -1,0 +1,16 @@
+Loading required package: Matrix
+Loaded glmnet 5.2
+
+===== LOCKED 8 GENE SIGNATURE, SCORED ONCE PER COHORT =====
+GSE62452 (viewed before)           n  65 events  49 | c-index 0.592 (95% ci 0.506-0.678) | HR per SD 1.40 (1.07-1.82) p 0.013 | replicates: TRUE
+GSE21501 (fresh)                   n 102 events  66 | c-index 0.565 (95% ci 0.472-0.654) | HR per SD 1.22 (0.94-1.58) p 0.137 | replicates: FALSE
+GSE57495 (fresh, after screen)     n  59 events  38 | c-index 0.558 (95% ci 0.449-0.664) | HR per SD 1.31 (0.90-1.90) p 0.156 | replicates: FALSE
+GSE57495 (all 63, sensitivity)     n  63 events  42 | c-index 0.571 (95% ci 0.465-0.671) | HR per SD 1.33 (0.93-1.89) p 0.116 | replicates: FALSE
+
+===== POOLED HR PER SD, POST HOC =====
+all three cohorts (GSE62452, GSE21501, GSE57495 after screen):
+  pooled HR per SD 1.30 (95% ci 1.10-1.54), p 0.0017 | heterogeneity p 0.77
+fresh cohorts only (GSE21501, GSE57495 after screen):
+  pooled HR per SD 1.25 (95% ci 1.01-1.54), p 0.0424 | heterogeneity p 0.75
+
+skipped: GSE79668 (49 patients after the screen and SLC16A2 missing)
