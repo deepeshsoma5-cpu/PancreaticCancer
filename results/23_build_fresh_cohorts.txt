@@ -1,0 +1,81 @@
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Setting options('download.file.method.GEOquery'='auto')
+Setting options('GEOquery.inmemory.gpl'=FALSE)
+Loading required package: limma
+
+Attaching package: ‘limma’
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    plotMA
+
+Found 1 file(s)
+GSE57495_series_matrix.txt.gz
+Using locally cached version: data//GSE57495_series_matrix.txt.gz
+Using locally cached version of GPL15048 found here:
+data//GPL15048.soft.gz 
+annotation column used: GeneSymbol (matches 13435 tcga genes)
+
+===== GSE57495 =====
+patients: 63  events: 42  censored: 21 
+median time (months), events: 16.2 | censored: 30.3 
+genes: 22115  shared with tcga: 13435 
+signature genes missing: none 
+Found 1 file(s)
+GSE79668_series_matrix.txt.gz
+Using locally cached version: data//GSE79668_series_matrix.txt.gz
+Using locally cached version of GPL11154 found here:
+data//GPL11154.soft.gz 
+trying URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE79nnn/GSE79668/suppl//GSE79668_51_tumors_sharedgenecounts.txt.gz?tool=geoquery'
+Content type 'application/x-gzip' length 3588753 bytes (3.4 MB)
+==================================================
+downloaded 3.4 MB
+
+                                                             size isdir mode
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz 3588753 FALSE  666
+                                                                        mtime
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz 2026-11-25 19:18:44
+                                                                        ctime
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz 2026-11-25 19:18:44
+                                                                        atime
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz 2026-11-25 19:18:43
+                                                           uid  gid     uname
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz 1000 1000 codespace
+                                                             grname
+data//GSE79668/GSE79668_51_tumors_sharedgenecounts.txt.gz codespace
+
+counts file dims: 48956 52 
+                Gene_EnsembleID T_07_07_A082a T_06_01_A033a T_06_11_A168a
+1 RP1-67K17.4_ENSG00000237851.1            25            12            44
+2        CTU2_ENSG00000174177.7           971          2095           567
+3     OR5BE1P_ENSG00000225538.1             0             0             0
+  T_06_04_A296a
+1            67
+2          1401
+3             0
+non numeric columns: Gene_EnsembleID 
+Error: could not find gene symbols in the counts file, paste me the head printed above
+Execution halted
