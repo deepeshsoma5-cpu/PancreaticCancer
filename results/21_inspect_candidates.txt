@@ -1,0 +1,70 @@
+GSM1383778 PDAC1 frozen pancreatic tissue
+GSM1383779 PDAC2 frozen pancreatic tissue
+GSM1383780 PDAC3 frozen pancreatic tissue
+                                  characteristics_ch1 characteristics_ch1.1
+GSM1383778 overall survival (month): 13.5333333333333    vital.status: DEAD
+GSM1383779 overall survival (month): 36.3666666666667    vital.status: DEAD
+GSM1383780              overall survival (month): 6.2    vital.status: DEAD
+           characteristics_ch1.2
+GSM1383778             Stage: 1B
+GSM1383779             Stage: 2B
+GSM1383780             Stage: 1B
+
+##### GSE78229 
+Found 1 file(s)
+GSE78229_series_matrix.txt.gz
+platform: GPL6244 | samples: 50 | genes/probes: 33297 
+              title                  source_name_ch1      characteristics_ch1
+GSM1527105 E005-Tc8  human pancreatic tumor tissue 1 tissue: Pancreatic tumor
+GSM1527109 E021-Tc8  human pancreatic tumor tissue 5 tissue: Pancreatic tumor
+GSM1527137 E094-Tc7 human pancreatic tumor tissue 33 tissue: Pancreatic tumor
+           characteristics_ch1.1 characteristics_ch1.2 characteristics_ch1.3
+GSM1527105           grading: G2            Stage: IIA survival months: 51.1
+GSM1527109           grading: G3            Stage: IIA  survival months: 2.7
+GSM1527137           grading: G2            Stage: IIA   survival months: 40
+           characteristics_ch1.4
+GSM1527105    survival status: 1
+GSM1527109    survival status: 1
+GSM1527137    survival status: 0
+
+##### GSE79668 
+Found 1 file(s)
+GSE79668_series_matrix.txt.gz
+platform: GPL11154 | samples: 51 | genes/probes: 0 
+                            title                         source_name_ch1
+GSM2100851  T_07_07_A082a_SL11228 pancreatic adenocarcinoma cancer tissue
+GSM2100852 T_06_01_A033a_T_SL9583 pancreatic adenocarcinoma cancer tissue
+GSM2100853  T_06_11_A168a_SL11229 pancreatic adenocarcinoma cancer tissue
+                     characteristics_ch1     characteristics_ch1.1
+GSM2100851 patient survival status: Dead survival time (days): 393
+GSM2100852 patient survival status: Dead survival time (days): 449
+GSM2100853 patient survival status: Dead survival time (days): 697
+           characteristics_ch1.2 characteristics_ch1.3  characteristics_ch1.4
+GSM2100851               age: 59   patient race: white patient gender: female
+GSM2100852               age: 53   patient race: white   patient gender: male
+GSM2100853               age: 77   patient race: white patient gender: female
+           characteristics_ch1.5 characteristics_ch1.6 characteristics_ch1.7
+GSM2100851     t (tnm score): T3     n (tnm score): N1     m (tnm score): M0
+GSM2100852     t (tnm score): T3     n (tnm score): N0     m (tnm score): M0
+GSM2100853     t (tnm score): T3     n (tnm score): N1     m (tnm score): M0
+           characteristics_ch1.8 library_source
+GSM2100851   diabetes status: no transcriptomic
+GSM2100852  diabetes status: yes transcriptomic
+GSM2100853   diabetes status: no transcriptomic
+
+##### GSE28735 
+Found 1 file(s)
+GSE28735_series_matrix.txt.gz
+platform: GPL6244 | samples: 90 | genes/probes: 28869 
+                                                       title
+GSM711904    human pancreatic tumor tissue, patient sample 1
+GSM711905 human pancreatic nontumor tissue, patient sample 1
+GSM711906    human pancreatic tumor tissue, patient sample 2
+                      source_name_ch1 characteristics_ch1 characteristics_ch1.1
+GSM711904     tumor tissue, patient 1           tissue: T    survival_month: 51
+GSM711905 non-tumor tissue, patient 1           tissue: N    survival_month: 51
+GSM711906     tumor tissue, patient 2           tissue: T     survival_month: 7
+          characteristics_ch1.2
+GSM711904       cancer_death: 1
+GSM711905       cancer_death: 1
+GSM711906       cancer_death: 1
