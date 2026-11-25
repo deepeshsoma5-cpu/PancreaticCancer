@@ -12,3 +12,9 @@
 - ICGC PACA-AU/CA: listed under controlled access (DACO). Skipped unless a download route is confirmed. Documented, not silently dropped.
 - Definition of "replicates": the 95% bootstrap CI of the C-index excludes 0.5 AND the HR per SD of the locked risk score is above 1. Stated now, applied to every cohort the same way.
 - A cohort that fails the duplicate screen, or loses patients to it so that it drops below 50 patients / 30 events, is skipped and documented.
+
+## Duplicate screen rules (written 2026-11-25T19:18Z, before the screen is run on GSE57495 / GSE79668)
+- Each gene is z-scored inside its own cohort; the 3000 most variable shared genes (mean MAD rank) are correlated between every new-cohort sample and every sample of each reference cohort (TCGA, GSE62452, GSE21501, GSE71729 all 123, and the other new cohort).
+- A new-cohort patient is flagged and dropped if best r >= 0.8, OR if a match has r >= 0.5 AND survival time within 0.5 months AND the same status.
+- After dropping, a cohort must still have at least 50 patients, at least 30 events and all 8 signature genes, or it is skipped and documented.
+- Scoring happens only after this screen is finished. Nothing is scored in the build or screen scripts.
