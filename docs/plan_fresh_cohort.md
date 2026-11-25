@@ -18,3 +18,7 @@
 - A new-cohort patient is flagged and dropped if best r >= 0.8, OR if a match has r >= 0.5 AND survival time within 0.5 months AND the same status.
 - After dropping, a cohort must still have at least 50 patients, at least 30 events and all 8 signature genes, or it is skipped and documented.
 - Scoring happens only after this screen is finished. Nothing is scored in the build or screen scripts.
+
+## Screen outcome (written 2026-11-25T19:25Z, after the screen, before any scoring of the new cohorts)
+- GSE57495: 63 patients, 4 flagged and dropped by the pre-specified rule (screen thresholds committed in 383af9f), leaving 59 patients and 38 events with all 8 signature genes. Passes the inclusion rule. Scored once, with an all-63 sensitivity run reported separately.
+- GSE79668: 51 patients, 2 flagged, leaving 49 (under 50) and SLC16A2 is missing from its counts. Fails the inclusion rule, skipped, not scored, no rescue attempted.
