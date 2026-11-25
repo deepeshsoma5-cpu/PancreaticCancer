@@ -66,25 +66,27 @@ st2 <- ifelse(tolower(sub(".*: ", "", as.character(pd2[[sc2]]))) == "dead", 1, 0
 f <- file.path("data", "GSE79668", "GSE79668_51_tumors_sharedgenecounts.txt.gz")
 if (!file.exists(f)) getGEOSuppFiles("GSE79668", baseDir = "data/", makeDirectory = TRUE)
 cn <- read.delim(f, check.names = FALSE, stringsAsFactors = FALSE)
-cat("\ncounts file dims:", dim(cn), "\n")
-print(cn[1:3, 1:min(5, ncol(cn))])
 num <- sapply(cn, is.numeric)
-cands <- names(cn)[!num]
-cat("non numeric columns:", cands, "\n")
-score <- sapply(cands, function(cc) length(intersect(unique(clean_sym(cn[[cc]])), ref)))
-if (!length(cands) || max(score) < 8000) {
-  stop("could not find gene symbols in the counts file, paste me the head printed above")
-}
-gid <- clean_sym(cn[[names(which.max(score))]])
+gcol <- names(cn)[!num][1]
+# labels look like CTU2_ENSG00000174177.7, so cut off the ensembl part to get the symbol
+gid <- sub("_ENSG[0-9]+(\\.[0-9]+)?$", "", cn[[gcol]])
+cat("\ngene column:", gcol, "| examples:", paste(head(gid, 4), collapse = ", "), "\n")
+cat("symbols matching tcga:", length(intersect(unique(gid), ref)), "\n")
+if (length(intersect(unique(gid), ref)) < 8000) stop("symbols still dont match tcga, paste me the examples above")
+
 m <- as.matrix(cn[, num, drop = FALSE])
-good <- !is.na(gid) & gid != ""
-m <- rowsum(m[good, , drop = FALSE], gid[good])
-ord <- match(colnames(m), pd2$title)
-if (any(is.na(ord))) {
-  cat("sample names did not match the series titles, assuming the same order\n")
-  stopifnot(ncol(m) == nrow(pd2))
-  ord <- seq_len(ncol(m))
+m <- rowsum(m[!is.na(gid) & gid != "", , drop = FALSE], gid[!is.na(gid) & gid != ""])
+
+# match each count column to exactly one series title by prefix, never assume the order
+ord <- sapply(colnames(m), function(x) {
+  h <- which(startsWith(pd2$title, x))
+  if (length(h) == 1) h else NA
+})
+if (any(is.na(ord)) || any(duplicated(ord))) {
+  print(head(data.frame(count_col = colnames(m), title_row = ord), 10))
+  stop("sample names did not match series titles one to one, paste me the output above")
 }
+cat("matched all", length(ord), "count columns to series titles\n")
 days <- days[ord]
 st2 <- st2[ord]
 keep2 <- !is.na(days) & days > 0 & colSums(m) > 0

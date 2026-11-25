@@ -1,6 +1,29 @@
-Error in gzfile(file, "rb") : cannot open the connection
-Calls: get -> readRDS -> gzfile
-In addition: Warning message:
-In gzfile(file, "rb") :
-  cannot open compressed file 'data/gse79668_tumors.rds', probable reason 'No such file or directory'
-Execution halted
+
+########## gse57495 ##########
+vs tcga      | best r: median 0.47, max 0.78 | flagged 2 of 63
+     sample                        match    best_r best_r_survmatch
+ GSM1383816 TCGA-IB-8126-01A-11R-2404-07 0.6577969        0.5612006
+ GSM1383839 TCGA-3A-A9IB-01A-21R-A39D-07 0.6527317        0.6527317
+vs gse62452  | best r: median 0.39, max 0.70 | flagged 1 of 63
+     sample      match    best_r best_r_survmatch
+ GSM1383835 GSM1527205 0.6793935        0.6793935
+vs gse21501  | best r: median 0.38, max 0.66 | flagged 0 of 63
+vs gse71729  | best r: median 0.40, max 0.68 | flagged 1 of 63
+     sample      match   best_r best_r_survmatch
+ GSM1383819 GSM1844143 0.574515        0.5624662
+vs gse79668  | best r: median 0.37, max 0.66 | flagged 0 of 63
+
+gse57495 after screen: 59 patients, 38 events, missing signature genes: none -> PASSES the inclusion rule
+
+########## gse79668 ##########
+vs tcga      | best r: median 0.40, max 0.65 | flagged 1 of 51
+        sample                        match    best_r best_r_survmatch
+ T_08_06_A060a TCGA-HZ-8637-01A-11R-2404-07 0.5873018        0.5251888
+vs gse62452  | best r: median 0.35, max 0.58 | flagged 0 of 51
+vs gse21501  | best r: median 0.34, max 0.64 | flagged 0 of 51
+vs gse71729  | best r: median 0.34, max 0.61 | flagged 1 of 51
+          sample      match    best_r best_r_survmatch
+ T_11_02_A171a_2 GSM1844212 0.6134745         0.582859
+vs gse57495  | best r: median 0.37, max 0.66 | flagged 0 of 51
+
+gse79668 after screen: 49 patients, 43 events, missing signature genes: SLC16A2 -> FAILS the inclusion rule, skip and document
