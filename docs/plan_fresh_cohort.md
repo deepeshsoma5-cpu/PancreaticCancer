@@ -6,3 +6,9 @@
 - Scoring: z-score genes inside each cohort, weight by the locked coefficients, score once per cohort. Report C-index with bootstrap CI and HR per SD.
 - Reported whatever the result. No cohort is dropped after scoring. A failed download or failed inclusion rule is documented and skipped.
 - Pooling with GSE62452 and GSE21501 (fixed-effect HR per SD) is a post hoc extension and is labeled that way.
+
+## Additions (written 2026-11-25T19:14Z, before any new cohort is scored)
+- Excluded: GSE78229 (same samples as GSE62452) and GSE28735 (only 45 tumors, and its samples are also part of GSE62452 per the GSE62452 series description).
+- ICGC PACA-AU/CA: listed under controlled access (DACO). Skipped unless a download route is confirmed. Documented, not silently dropped.
+- Definition of "replicates": the 95% bootstrap CI of the C-index excludes 0.5 AND the HR per SD of the locked risk score is above 1. Stated now, applied to every cohort the same way.
+- A cohort that fails the duplicate screen, or loses patients to it so that it drops below 50 patients / 30 events, is skipped and documented.

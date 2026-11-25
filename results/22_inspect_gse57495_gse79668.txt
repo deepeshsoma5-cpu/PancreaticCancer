@@ -1,0 +1,102 @@
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Setting options('download.file.method.GEOquery'='auto')
+Setting options('GEOquery.inmemory.gpl'=FALSE)
+Found 1 file(s)
+GSE57495_series_matrix.txt.gz
+
+##### GSE57495 | platform: GPL15048 | samples: 63 | probes: 60607 
+annotation columns: ID, GB_LIST, EntrezGeneID, GeneSymbol, SPOT_ID 
+
+-- status --
+Public on Aug 28 2015 
+                   63 
+
+-- source_name_ch1 --
+frozen pancreatic tissue 
+                      63 
+
+-- characteristics_ch1 --
+
+overall survival (month): 33.4666666666667 
+                                         2 
+            overall survival (month): 10.6 
+                                         1 
+            overall survival (month): 11.5 
+                                         1 
+overall survival (month): 12.1666666666667 
+                                         1 
+overall survival (month): 12.5333333333333 
+                                         1 
+overall survival (month): 13.5333333333333 
+                                         1 
+            overall survival (month): 13.6 
+                                         1 
+overall survival (month): 13.9333333333333 
+                                         1 
+
+-- characteristics_ch1.1 --
+
+ vital.status: DEAD vital.status: ALIVE 
+                 42                  21 
+
+-- characteristics_ch1.2 --
+
+Stage: 2B Stage: 2A Stage: 1B  Stage: 1 
+       33        17        12         1 
+
+-- overall survival (month):ch1 --
+
+33.4666666666667             10.6             11.5 12.1666666666667 
+               2                1                1                1 
+12.5333333333333 13.5333333333333             13.6 13.9333333333333 
+               1                1                1                1 
+
+-- Stage:ch1 --
+
+2B 2A 1B  1 
+33 17 12  1 
+
+-- vital.status:ch1 --
+
+ DEAD ALIVE 
+   42    21 
+Found 1 file(s)
+GSE79668_series_matrix.txt.gz
+
+##### GSE79668 | columns used: patient survival status:ch1 | survival time (days):ch1 
+status counts:
+st
+alive  dead 
+    6    45 
+events (dead): 45  censored: 6 
+median survival time (months): 18.8 
+patients with a time: 51 
+
+supplementary files listed for GSE79668:
+                                       fname
+1 GSE79668_51_tumors_sharedgenecounts.txt.gz
+                                                                                                          url
+1 https://ftp.ncbi.nlm.nih.gov/geo/series/GSE79nnn/GSE79668/suppl//GSE79668_51_tumors_sharedgenecounts.txt.gz
