@@ -22,3 +22,7 @@
 ## Screen outcome (written 2026-11-25T19:25Z, after the screen, before any scoring of the new cohorts)
 - GSE57495: 63 patients, 4 flagged and dropped by the pre-specified rule (screen thresholds committed in 383af9f), leaving 59 patients and 38 events with all 8 signature genes. Passes the inclusion rule. Scored once, with an all-63 sensitivity run reported separately.
 - GSE79668: 51 patients, 2 flagged, leaving 49 (under 50) and SLC16A2 is missing from its counts. Fails the inclusion rule, skipped, not scored, no rescue attempted.
+
+## Clarification (written 2026-11-26T02:45Z, AFTER the scoring in commit e9f8aea; no verdict changes)
+- Operationally, "replicates" was implemented as: the lower bound of the bootstrap 95% CI of the C-index is above 0.5 AND the point estimate of the HR per SD is above 1. No p-value threshold is part of the rule. This is exactly what code/25_score_fresh.R in commit e9f8aea computed.
+- A local edit that also counted "CI upper bound below 0.5" was discarded. It would not have changed any verdict (GSE62452 meets the rule; GSE21501 and GSE57495 do not).
