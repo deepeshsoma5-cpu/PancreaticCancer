@@ -1,4 +1,4 @@
-replicated (tcga + gse62452), unadjusted: 17 | of original 14: 12 
+replicated (tcga + gse62452), unadjusted: 17 
 replicated (tcga + gse62452), adjusted for stromal+immune: 32 
                                set rho_tcga fdr_tcga rho_ext fdr_ext fdr_g21
                    MITOTIC_SPINDLE    0.637  3.4e-16   0.490 2.8e-04 4.1e-04

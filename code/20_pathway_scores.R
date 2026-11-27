@@ -33,12 +33,10 @@ for (nm in names(coh)) {
   res[[nm]] <- o
 }
 mg <- Reduce(function(a, b) merge(a, b, by = "set"), lapply(names(res), function(n) { d <- res[[n]]; names(d)[-1] <- paste0(names(d)[-1], "_", n); d }))
-old14 <- { o <- read.csv("results/11_hallmark_camera.csv"); o$set[o$replicated] }
-mg$was14 <- mg$set %in% old14
 mg$rep <- sign(mg$rho_tcga) == sign(mg$rho_ext) & mg$fdr_tcga < 0.05 & mg$fdr_ext < 0.05
 mg$rep_adj <- sign(mg$beta_adj_tcga) == sign(mg$beta_adj_ext) & mg$fdr_adj_tcga < 0.05 & mg$fdr_adj_ext < 0.05
 mg$set <- sub("HALLMARK_", "", mg$set); mg <- mg[order(mg$fdr_tcga), ]
-cat("replicated (tcga + gse62452), unadjusted:", sum(mg$rep), "| of original 14:", sum(mg$rep & mg$was14), "\n")
+cat("replicated (tcga + gse62452), unadjusted:", sum(mg$rep), "\n")
 cat("replicated (tcga + gse62452), adjusted for stromal+immune:", sum(mg$rep_adj), "\n")
-print(mg[mg$rep | mg$rep_adj | mg$was14, c("set", "rho_tcga", "fdr_tcga", "rho_ext", "fdr_ext", "fdr_g21", "fdr_adj_tcga", "fdr_adj_ext", "rep", "rep_adj")], digits = 2, row.names = FALSE)
+print(mg[mg$rep | mg$rep_adj, c("set", "rho_tcga", "fdr_tcga", "rho_ext", "fdr_ext", "fdr_g21", "fdr_adj_tcga", "fdr_adj_ext", "rep", "rep_adj")], digits = 2, row.names = FALSE)
 write.csv(mg, "results/20_pathway_scores.csv", row.names = FALSE)

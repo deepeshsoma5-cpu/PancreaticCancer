@@ -60,21 +60,19 @@ for (a in c("est_cor", "adjusted")) {
 }
 
 w <- function(k, tag) { d <- out[[k]]; if (is.null(d)) return(NULL); names(d) <- c("set", paste0(c("n", "cor", "dir", "p", "fdr"), "_", tag)); d }
-old14 <- { o <- read.csv("results/11_hallmark_camera.csv"); o$set[o$replicated] }
 for (a in c("est_cor", "adjusted")) {
   parts <- Filter(Negate(is.null), list(w(paste("TCGA", a), "tcga"), w(paste("GSE62452", a), "ext"), w(paste("GSE21501", a), "g21")))
   d <- Reduce(function(x, y) merge(x, y, by = "set"), parts)
   d$rep2 <- d$dir_tcga == d$dir_ext & d$fdr_tcga < 0.05 & d$fdr_ext < 0.05
-  d$was14 <- d$set %in% old14
   if ("dir_g21" %in% names(d)) d$rep3 <- d$rep2 & d$dir_g21 == d$dir_tcga & d$fdr_g21 < 0.05
   d$set <- sub("HALLMARK_", "", d$set)
   d <- d[order(d$fdr_tcga), ]
   cat("\n##########", a, "##########\n")
   cat("median estimated inter-gene correlation: tcga", round(median(d$cor_tcga), 3), "| ext", round(median(d$cor_ext), 3), "(cameraPR assumed 0.01)\n")
-  cat("replicated in tcga + gse62452:", sum(d$rep2), "| of the original 14:", sum(d$rep2 & d$was14))
+  cat("replicated in tcga + gse62452:", sum(d$rep2))
   if ("rep3" %in% names(d)) cat(" | also in gse21501:", sum(d$rep3))
   cat("\n")
-  cols <- intersect(c("set", "dir_tcga", "fdr_tcga", "dir_ext", "fdr_ext", "dir_g21", "fdr_g21", "rep2", "was14"), names(d))
-  print(d[d$was14 | d$rep2, cols], digits = 2, row.names = FALSE)
+  cols <- intersect(c("set", "dir_tcga", "fdr_tcga", "dir_ext", "fdr_ext", "dir_g21", "fdr_g21", "rep2"), names(d))
+  print(d[d$rep2, cols, drop = FALSE], digits = 2, row.names = FALSE)
   write.csv(d, paste0("results/19_pathways_", a, ".csv"), row.names = FALSE)
 }

@@ -1,7 +1,7 @@
 
 ########## est_cor ##########
 median estimated inter-gene correlation: tcga 0.064 | ext 0.081 (cameraPR assumed 0.01)
-replicated in tcga + gse62452: 0 | of the original 14: 0 | also in gse21501: 0
+replicated in tcga + gse62452: 0 | also in gse21501: 0
                        set dir_tcga fdr_tcga dir_ext fdr_ext dir_g21 fdr_g21
                E2F_TARGETS       Up    0.061      Up    0.12      Up    0.53
             G2M_CHECKPOINT       Up    0.061      Up    0.12      Up    0.53
@@ -35,7 +35,7 @@ replicated in tcga + gse62452: 0 | of the original 14: 0 | also in gse21501: 0
 
 ########## adjusted ##########
 median estimated inter-gene correlation: tcga 0.044 | ext 0.058 (cameraPR assumed 0.01)
-replicated in tcga + gse62452: 0 | of the original 14: 0 | also in gse21501: 0
+replicated in tcga + gse62452: 0 | also in gse21501: 0
                        set dir_tcga fdr_tcga dir_ext fdr_ext dir_g21 fdr_g21
                E2F_TARGETS       Up    0.074      Up   0.094      Up    0.36
             G2M_CHECKPOINT       Up    0.074      Up   0.094      Up    0.36
