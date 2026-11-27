@@ -1,4 +1,4 @@
-# Final plan: close validation and finish pathways (written 2026-11-26T02:46Z, before code/30 and code/31 are run)
+# Final plan: close validation and finish pathways (written 2026-11-27T19:59Z, before code/30 and code/31 are run)
 
 ## Validation is closed
 - The locked 8 gene signature was scored once on three external cohorts (GSE62452, GSE21501, GSE57495 after the duplicate screen). GSE79668 was skipped by the inclusion rule.
