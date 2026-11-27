@@ -95,3 +95,11 @@ change the locked TCGA-only signature.
 - Public human datasets were analyzed without participant contact. The
   applicable fair's SRC/IRB determination remains to be confirmed before
   submission.
+
+## Late entries (written 2026-11-27T20:12Z for events on Nov 25 to 27; labeled as late so the log stays honest)
+
+- Nov 25, retracted claim: the first pathway analysis (limma cameraPR, code/11b) reported 14 replicated Hallmark pathways. This was retracted because cameraPR assumes an inter-gene correlation of 0.01, while the data give about 0.04 to 0.08, which inflated the p-values. A rerun with the correlation estimated from the data (31af8cf) found 0 replicated pathways in TCGA and GSE62452 (best FDR 0.061 for G2M checkpoint and E2F targets, directions consistent). A patient-level score test (fe4bd66) found 17 replicated unadjusted. The two kinds of test answer different questions, and the discrepancy is reported in the paper.
+- Nov 26 02:46Z: final pathway analysis specified in writing (docs/plan_final.md, ea823fb) and run in the same session. The results commit (59a6bfb) came 18 seconds later, so this is "committed before the run", not a long advance registration. Result: 23 of 50 Hallmark sets replicated across four cohorts, and 0 of 300 shuffled-risk controls replicated anything.
+- Nov 26: the decision to stop validation at three cohorts (GSE62452, GSE21501, GSE57495) was made after seeing the scores, and is recorded as such in docs/plan_final.md. GSE79668 was skipped by the inclusion rule (49 patients after the screen, SLC16A2 missing). E-MTAB-6134, ICGC and a LASSO + RSF ensemble were not run.
+- Nov 27 19:59Z, mistake and fix: a repeated run of the plan-writing step overwrote docs/plan_final.md with a new timestamp (5ec9d27). It was reverted in 27f2c2f and the original header (2026-11-26T02:46Z) is intact. No analysis results changed.
+- Nov 27 20:09Z: removed the "original 14" comparison lines from the exploratory pathway scripts (7ca2010). All values in the columns shared with the committed CSVs were verified identical, and only the was14 column was dropped. Committed the mutation-file download list as docs/gdc_manifest_mutation_files.txt (it had overwritten MANIFEST.txt).
