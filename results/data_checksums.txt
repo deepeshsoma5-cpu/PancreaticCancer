@@ -1,0 +1,11 @@
+1b4e0486f06277e0a35d602635cfc0b2  data/fresh_gse57495.rds
+d5cd88545fff4fa74ed20076a0de29b7  data/fresh_gse79668.rds
+410158ef048820b919358aa21dd218e2  data/gse21501_tumors.rds
+e3792475c32aa4aca0b3353c40db3af4  data/gse57495_tumors.rds
+87ae65df128ebaeae8ba9cb6529dc771  data/gse62452_tumors.rds
+68c61a3055f71ecb9ec44f2af9dc6476  data/gse71729_tumors.rds
+937b19b7bd05be542a0b2afc436031f1  data/gse79668_tumors.rds
+1b9cb6b48c8e286b1d127fa3b8f6b6ee  data/model_input.rds
+71ef4ecccbb61b14a8d05408cc1de113  data/tcga_paad_clean.rds
+dfbabe0552c08f0935839062bccaf21e  data/tcga_paad_maf.rds
+14f7403f1b7d9e5bbf52f0da5717de1d  data/tcga_paad_pdac.rds

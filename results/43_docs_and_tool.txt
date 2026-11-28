@@ -1,0 +1,3 @@
+wrote docs/MODEL_CARD.md
+scored 65 samples, wrote results/example_scores_gse62452.csv 
+SCORING TOOL MATCHES THE ORIGINAL PIPELINE SCORES: TRUE 

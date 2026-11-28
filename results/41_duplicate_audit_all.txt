@@ -1,0 +1,19 @@
+patients flagged (rows) when screened against each other cohort (columns):
+          against
+screened   TCGA GSE62452 GSE21501 GSE57495 GSE71729
+  TCGA       NA        2        2        2        2
+  GSE62452    2       NA        1        1        1
+  GSE21501    2        1       NA        0       92
+  GSE57495    2        1        0       NA        1
+  GSE71729    2        1       93        1       NA
+
+scored-cohort patients flagged against TCGA or an earlier scored cohort: 8 
+   cohort     sample  against    best_r best_r_survmatch
+ GSE62452 GSM1527183     TCGA 0.5969792        0.5394556
+ GSE62452 GSM1527200     TCGA 0.6875391        0.5306209
+ GSE21501  GSM536481     TCGA 0.5215153        0.5088993
+ GSE21501  GSM536882     TCGA 0.5406504        0.5049431
+ GSE21501  GSM536457 GSE62452 0.5761595        0.5761595
+ GSE57495 GSM1383816     TCGA 0.6577969        0.5612006
+ GSE57495 GSM1383839     TCGA 0.6527317        0.6527317
+ GSE57495 GSM1383835 GSE62452 0.6793935        0.6793935

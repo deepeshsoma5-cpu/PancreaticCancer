@@ -13,3 +13,6 @@ overall survival in pancreatic ductal adenocarcinoma.
 Scripts are numbered in `code/`; saved analysis outputs and figures are in
 `results/`. Fresh-cohort eligibility and screening results are recorded before
 scoring in the plan and the corresponding result files.
+
+- [Model card](docs/MODEL_CARD.md), [integrity report](docs/INTEGRITY_REPORT.md), [extended results](results/EXTENDED_RESULTS.md) and [how to reproduce](docs/REPRODUCE.md).
+- Score a new cohort with the locked signature: Rscript code/score_new_cohort.R expression.csv scores.csv (requirements are in the model card).
